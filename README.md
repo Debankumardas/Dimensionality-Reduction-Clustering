@@ -12,6 +12,53 @@ The analysis focuses on Principal Component Analysis (PCA) and three clustering 
 
 The project evaluates how dimensionality reduction can simplify high-dimensional data while preserving important information and how different clustering algorithms identify groups within the data.
 
+## Reproducibility
+
+The project uses a Python virtual environment and a documented dependency file.
+
+### Environment Setup
+
+```powershell
+py -3.12 -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+
+---
+
+### Step 3 — Add the final project results to README
+
+Below the reproducibility section, add:
+
+```markdown
+## Key Results
+
+| Analysis | Result |
+|---|---|
+| Original feature space | 561 features |
+| PCA components retained | 102 |
+| Variance retained | Approximately 95% |
+| K-Means optimal k | 2 |
+| K-Means Silhouette Score | 0.4154 |
+| DBSCAN configuration | eps=20, min_samples=5 |
+| DBSCAN clusters | 2 |
+| DBSCAN noise | 159 observations (2.16%) |
+| DBSCAN Silhouette Score | 0.4256 |
+| Hierarchical clusters | 2 |
+| Hierarchical Silhouette Score | 0.4150 |
+
+### Interpretation
+
+The analysis identified meaningful structure in the high-dimensional smartphone sensor data. K-Means produced a particularly interpretable separation between stationary and movement-related activities, while DBSCAN achieved the highest Silhouette Score among the evaluated configurations.
+
+Known activity labels were used only for post-hoc interpretation and were not provided to the clustering algorithms.
+
+## Dataset Citation
+
+Reyes-Ortiz, J., Anguita, D., Ghio, A., Oneto, L., & Parra, X. (2013). Human Activity Recognition Using Smartphones [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C54S4K
+
+Dataset source: UCI Machine Learning Repository — Human Activity Recognition Using Smartphones.
+
 ## Objectives
 
 - Standardize high-dimensional numerical features.
@@ -55,6 +102,7 @@ The project follows the following workflow:
 - Seaborn
 - Plotly
 - Jupyter Notebook
+- Scipy
 
 ## Project Structure
 
